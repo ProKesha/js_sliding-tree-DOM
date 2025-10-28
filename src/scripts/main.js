@@ -14,12 +14,15 @@ items.forEach((li) => {
 
     childUl.style.overflow = 'hidden';
     childUl.style.maxHeight = childUl.scrollHeight + 'px';
-    childUl.style.transition = 'max-height 0.3 ease';
+    childUl.style.transition = 'max-height 0.3s ease';
+
+    let fullHeight = childUl.scrollHeight;
 
     span.addEventListener('click', () => {
       if (childUl.style.maxHeight === '0px') {
-        childUl.style.maxHeight = childUl.scrollHeight + 'px';
+        childUl.style.maxHeight = fullHeight + 'px';
       } else {
+        fullHeight = childUl.scrollHeight;
         childUl.style.maxHeight = '0px';
       }
     });
