@@ -16,13 +16,12 @@ items.forEach((li) => {
     childUl.style.maxHeight = childUl.scrollHeight + 'px';
     childUl.style.transition = 'max-height 0.3s ease';
 
-    let fullHeight = childUl.scrollHeight;
+    const fullHeight = childUl.scrollHeight;
 
     span.addEventListener('click', () => {
       if (childUl.style.maxHeight === '0px') {
         childUl.style.maxHeight = fullHeight + 'px';
       } else {
-        fullHeight = childUl.scrollHeight;
         childUl.style.maxHeight = '0px';
       }
     });
